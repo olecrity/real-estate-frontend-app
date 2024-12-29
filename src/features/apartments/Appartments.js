@@ -15,10 +15,10 @@ function Appartments() {
         </Col>
       </Row>
       <Row>
-        <Col span={6}>
+        <Col lg={{ span: 6 }} xs={{ span: 24 }}>
           <AppartmentsSider />
         </Col>
-        <Col span={17}>
+        <Col lg={{ span: 16, offset: 1 }} span={22} offset={1}>
           <AppartmentsFilter />
           <Divider />
           <AppartmentsTable />

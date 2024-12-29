@@ -21,10 +21,17 @@ function NewAppartmentForm() {
   const [previewImage, setPreviewImage] = useState("");
   const [fileList, setFileList] = useState([]);
 
+  const [isHouse, setIsHouse] = useState(false);
+
   const { isCreating, createAppartment } = useCreateAppartment();
 
   const onFinish = async (values) => {
-    createAppartment({ ...values, photos: values.photos.fileList });
+    const newValues = {
+      ...values,
+      floor: isHouse ? 0 : values.floor,
+      heating: isHouse ? "індивідуальне" : values.heating,
+    };
+    createAppartment({ ...newValues, photos: newValues.photos.fileList });
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -113,6 +120,7 @@ function NewAppartmentForm() {
                 { value: "будинок", label: "Будинок" },
               ]}
               size="large"
+              onChange={(value) => setIsHouse(value === "будинок")}
             />
           </Form.Item>
         </Col>
@@ -171,6 +179,7 @@ function NewAppartmentForm() {
               style={{
                 width: "100%",
               }}
+              disabled={isHouse}
             />
           </Form.Item>
         </Col>
@@ -246,6 +255,7 @@ function NewAppartmentForm() {
                 { value: "індивідуальне", label: "Індивідуальне" },
               ]}
               size="large"
+              disabled={isHouse}
             />
           </Form.Item>
         </Col>

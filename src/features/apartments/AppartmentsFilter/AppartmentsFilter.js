@@ -5,10 +5,15 @@ import { useFilters } from "../../../contexts/FiltersContext";
 
 function AppartmentsFilter() {
   const { filters, dispatch } = useFilters();
-  console.log(Number(filters.rooms_max), +filters.rooms_min);
+  const [isHouse, setIsHouse] = useState(false);
 
   function handleFinish(values) {
-    dispatch({ type: "filters/set", payload: values });
+    const newValues = {
+      ...values,
+      floor_min: isHouse ? null : values.floor_min,
+      floor_max: isHouse ? null : values.floor_max,
+    };
+    dispatch({ type: "filters/set", payload: newValues });
   }
   function handleReset() {
     dispatch({ type: "filters/reset" });
@@ -26,6 +31,7 @@ function AppartmentsFilter() {
                 style={{ width: "100%" }}
                 controls={false}
                 placeholder="Поверх від"
+                disabled={isHouse}
               />
             </Form.Item>
           </Col>
@@ -67,6 +73,7 @@ function AppartmentsFilter() {
                 style={{ width: "100%" }}
                 controls={false}
                 placeholder="Тип оселі"
+                onChange={(value) => setIsHouse(value === "будинок")}
               />
             </Form.Item>
           </Col>
@@ -77,6 +84,7 @@ function AppartmentsFilter() {
               <InputNumber
                 style={{ width: "100%" }}
                 controls={false}
+                disabled={isHouse}
                 placeholder="Поверх до"
               />
             </Form.Item>
