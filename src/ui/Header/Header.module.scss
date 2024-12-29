@@ -6,7 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
+  top: 0px;
   width: 1000px;
   background-color: white;
   opacity: 0.8;
@@ -52,7 +53,7 @@
       font-weight: 500;
       display: flex;
       flex-direction: column;
-      color: rgb(1, 71, 32);
+      color: rgb(61 93 104);
       .lion {
         font-size: 14px;
       }
@@ -73,6 +74,7 @@
 
 @media (max-width: 1030px) {
   .header {
+    width: 100%;
     .desktop-menu {
       display: none;
     }

@@ -32,11 +32,7 @@ function AptRow({ object }) {
           <div className={styles["text-info-left"]}>
             <p className={styles["date"]}>{object.created_date}</p>
             <p>{object.location}</p>
-            <p>
-              {object.rooms > 3
-                ? "Багато-кімнатна квартира"
-                : `${object.rooms}-кімнатна квартира`}
-            </p>
+            <p>{`${object.rooms} кім.`}</p>
             <p>Площа: {object.square}</p>
             <p>Поверх: {object.floor}</p>
           </div>

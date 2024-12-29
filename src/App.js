@@ -44,7 +44,7 @@ const App = memo(function App() {
         <ReactQueryDevtools initialIsOpen={false} />
         <Routes>
           <Route element={<AppLayout />}>
-            <Route index element={<Navigate to="login" replace />} />
+            <Route index element={<Navigate to="/appartments" replace />} />
             <Route path="appartments" element={<Advertisments />} />
             <Route path="bookmarks" element={<BookmarksPage />} />
             <Route path="work" element={<Work />} />
