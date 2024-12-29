@@ -56,16 +56,24 @@ function Header() {
           </li>
         )}
       </ul>
-      <Dropdown menu={{ items }} className={styles["mobile-menu"]}>
-        <Button>
-          <MenuOutlined />
-        </Button>
-      </Dropdown>
-      {isAuth && (
-        <Button variant="solid" color="primary" onClick={logout}>
-          logout
-        </Button>
-      )}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <Dropdown menu={{ items }} className={styles["mobile-menu"]}>
+          <Button>
+            <MenuOutlined />
+          </Button>
+        </Dropdown>
+        {isAuth && (
+          <Button variant="solid" color="primary" onClick={logout}>
+            logout
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
