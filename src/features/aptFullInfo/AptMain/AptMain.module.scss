@@ -1,0 +1,24 @@
+.apt-full-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 15px;
+  .apt-overall-info-container {
+    h2 {
+      font-size: 30px;
+      margin: 20px 0;
+    }
+    .sq-meter-price {
+      font-size: 20px;
+      color: grey;
+    }
+  }
+  .apt-info-table {
+    display: flex;
+    flex-direction: column;
+  }
+  .addition {
+    color: rgba(105, 105, 105, 0.945);
+    font-size: 16px;
+  }
+}

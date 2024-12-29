@@ -18,7 +18,7 @@ function Login() {
   };
 
   return (
-    <main className="form-wrapper" style={{ maxWidth: "450px" }}>
+    <main className="form-wrapper form-shadow" style={{ maxWidth: "450px" }}>
       <h3>Login</h3>
       <Form
         name="basic"

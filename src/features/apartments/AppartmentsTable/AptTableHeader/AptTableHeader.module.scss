@@ -1,0 +1,16 @@
+.apt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 15px 0;
+  margin: 10px 0;
+  & > span {
+    font-size: 20px;
+  }
+
+  .sorting-container {
+    & > span {
+      font-size: 16px;
+    }
+  }
+}

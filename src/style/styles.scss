@@ -2,6 +2,7 @@ $color-hover: rgb(27, 162, 252);
 
 body {
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 .active {
@@ -14,6 +15,18 @@ body {
   flex-direction: column;
   padding: 50px;
   margin: 5vh auto;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form-shadow {
   box-shadow: 0 32px 40px -2px rgba(10, 22, 70, 0.12),
     0 0 1px 0 rgba(10, 22, 70, 0.06);
+}
+
+.shadow-bottom {
+  box-shadow: 0 12px 6px -6px rgba(10, 22, 70, 0.12);
 }

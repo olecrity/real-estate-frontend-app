@@ -1,0 +1,8 @@
+.data-row {
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  &:nth-child(odd) {
+    background-color: lightgrey;
+  }
+}

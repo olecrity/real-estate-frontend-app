@@ -1,17 +1,29 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Appartments from "./pages/Appartments";
+import Advertisments from "./pages/Advertisments";
 import Work from "./pages/Work";
 import AboutUs from "./pages/AboutUs";
-import Header from "./ui/Header/Header";
 import Login from "./pages/Login";
 import { useAuth } from "./contexts/AuthContext";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import CreateAppartment from "./pages/CreateAppartment";
 import FakePage from "./pages/FakePage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import AppLayout from "./ui/AppLayout/AppLayout";
+import Appartment from "./pages/Appartment";
+import BookmarksPage from "./pages/BookmarksPage";
+import { useBookmarks } from "./contexts/BookmarksContext";
 
-function App() {
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
+const App = memo(function App() {
   const { isAuth, tokenLogin } = useAuth();
-
+  const { setBookmarks } = useBookmarks();
   useEffect(
     function () {
       tokenLogin();
@@ -19,21 +31,34 @@ function App() {
     [tokenLogin]
   );
 
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route index element={<Navigate to="login" replace />} />
-        <Route path="appartments" element={<Appartments />} />
-        <Route path="work" element={<Work />} />
-        <Route path="about-us" element={<AboutUs />} />
-        <Route path="login" element={<Login />} />
-        {isAuth && (
-          <Route path="appartment/create" element={<CreateAppartment />} />
-        )}
-      </Routes>
-    </>
+  useEffect(
+    function () {
+      setBookmarks();
+    },
+    [setBookmarks]
   );
-}
+
+  return (
+    <div className="page-wrapper">
+      <QueryClientProvider client={queryClient}>
+        <ReactQueryDevtools initialIsOpen={false} />
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route index element={<Navigate to="login" replace />} />
+            <Route path="appartments" element={<Advertisments />} />
+            <Route path="bookmarks" element={<BookmarksPage />} />
+            <Route path="work" element={<Work />} />
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="login" element={<Login />} />
+            <Route path="appartment/:appartmentId" element={<Appartment />} />
+            {isAuth && (
+              <Route path="appartment/create" element={<CreateAppartment />} />
+            )}
+          </Route>
+        </Routes>
+      </QueryClientProvider>
+    </div>
+  );
+});
 
 export default App;

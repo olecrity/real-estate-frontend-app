@@ -1,11 +1,5 @@
 import { jwtDecode } from "jwt-decode";
-import {
-  Children,
-  createContext,
-  useCallback,
-  useContext,
-  useReducer,
-} from "react";
+import { createContext, useCallback, useContext, useReducer } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
@@ -69,12 +63,12 @@ function AuthProvider({ children }) {
     localStorage.setItem("user", JSON.stringify(userData.user));
     navigate("/appartment/create");
   }
-  function logout() {
+  const logout = useCallback(function () {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     dispatch({ type: "logout" });
     navigate("/login");
-  }
+  }, []);
 
   const tokenLogin = useCallback(
     async function () {
@@ -105,7 +99,7 @@ function AuthProvider({ children }) {
         console.error(err.message);
       }
     },
-    [navigate]
+    [logout]
   );
 
   return (

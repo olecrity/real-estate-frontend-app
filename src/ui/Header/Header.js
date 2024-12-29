@@ -3,20 +3,27 @@ import styles from "./Header.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
 
 function Header() {
-  const { logout } = useAuth();
-
+  const { isAuth, logout } = useAuth();
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} shadow-bottom`}>
       <ul>
         <li>
-          <NavLink to="appartments">Appartments</NavLink>
+          <NavLink to="/appartments">Оголошення</NavLink>
         </li>
         <li>
-          <NavLink to="work">Work</NavLink>
+          <NavLink to="/work">Робота</NavLink>
         </li>
         <li>
-          <NavLink to="about-us">About us</NavLink>
+          <NavLink to="/about-us">Про нас</NavLink>
         </li>
+        <li>
+          <NavLink to="/bookmarks">Закладки</NavLink>
+        </li>
+        {isAuth && (
+          <li>
+            <NavLink to="/appartment/create">Додати оголошення</NavLink>
+          </li>
+        )}
       </ul>
       <button onClick={logout}>logout</button>
     </div>

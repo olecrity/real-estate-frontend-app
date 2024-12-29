@@ -1,0 +1,12 @@
+.layout {
+  padding: 0 15px 0 15px;
+  width: 1000px;
+}
+.main {
+  margin-top: 50px;
+}
+@media (max-width: 1000px) {
+  .layout {
+    width: 100%;
+  }
+}
