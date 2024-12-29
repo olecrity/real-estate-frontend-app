@@ -24,8 +24,8 @@ function AppartmentsFilter() {
         className={`${styles["filter-form"]} form-shadow`}
         onFinish={handleFinish}
       >
-        <Row>
-          <Col span={4}>
+        <Row gutter={[5, 5]}>
+          <Col lg={{ span: 4 }} span={12}>
             <Form.Item name="floor_min">
               <InputNumber
                 style={{ width: "100%" }}
@@ -35,7 +35,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="square_min">
               <InputNumber
                 style={{ width: "100%" }}
@@ -44,7 +44,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="rooms_min">
               <InputNumber
                 style={{ width: "100%" }}
@@ -53,7 +53,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="price_min">
               <InputNumber
                 style={{ width: "100%" }}
@@ -62,7 +62,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="type">
               <Select
                 options={[
@@ -77,9 +77,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-        </Row>
-        <Row>
-          <Col span={4}>
+          <Col lg={{ span: 4 }} span={12}>
             <Form.Item name="floor_max">
               <InputNumber
                 style={{ width: "100%" }}
@@ -89,7 +87,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="square_max">
               <InputNumber
                 style={{ width: "100%" }}
@@ -98,7 +96,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="rooms_max">
               <InputNumber
                 style={{ width: "100%" }}
@@ -107,7 +105,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="price_max">
               <InputNumber
                 style={{ width: "100%" }}
@@ -116,7 +114,7 @@ function AppartmentsFilter() {
               />
             </Form.Item>
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} span={12}>
             <Form.Item name="category">
               <Select
                 options={[

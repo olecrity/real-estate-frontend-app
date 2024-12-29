@@ -31,4 +31,21 @@
       justify-content: start;
     }
   }
+  .main-image {
+    height: 210px;
+  }
+  .secondary-image {
+    height: 55px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .apt-sider {
+    .main-image {
+      height: 100%;
+    }
+    .secondary-image {
+      height: 100%;
+    }
+  }
 }

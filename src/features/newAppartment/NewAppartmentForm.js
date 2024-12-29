@@ -168,7 +168,7 @@ function NewAppartmentForm() {
             name="floor"
             rules={[
               {
-                required: true,
+                required: !isHouse,
                 message: "Будь ласка, введіть номер поверху!",
               },
             ]}

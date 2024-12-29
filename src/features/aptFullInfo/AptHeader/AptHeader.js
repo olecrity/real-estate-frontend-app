@@ -16,7 +16,7 @@ function AptHeader() {
   return (
     <div className={styles["apt-header"]}>
       <h2 className={styles["header-text"]}>
-        {appartmentInfo.location}, Код: {appartmentInfo.code}
+        {appartmentInfo.title}, Код: {appartmentInfo.code}
       </h2>
       <Button onClick={handleBack} variant="solid" color="danger" size="large">
         Повернутись до списку

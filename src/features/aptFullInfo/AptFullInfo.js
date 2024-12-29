@@ -21,10 +21,10 @@ function AptFullInfo() {
         </Col>
       </Row>
       <Row>
-        <Col span={8}>
+        <Col xl={{ span: 8 }} span={24}>
           <AptSider />
         </Col>
-        <Col span={16}>
+        <Col xl={{ span: 15, offset: 1 }} span={24}>
           <AptMain />
         </Col>
       </Row>

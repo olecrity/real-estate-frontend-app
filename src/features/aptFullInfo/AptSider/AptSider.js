@@ -11,21 +11,34 @@ function AptSider() {
   return (
     <div className={styles["apt-sider"]}>
       <Image.PreviewGroup>
-        <Row gutter={[5, 5]}>
+        <Row gutter={[5, 5]} key={1}>
           {appartmentInfo.photos.map((photo, index) =>
             index === 0 ? (
-              <Col span={24} key={index}>
+              <Col
+                className={styles["main-image"]}
+                xl={{ span: 24, offset: 0 }}
+                span={22}
+                offset={1}
+                key={index}
+                style={{ height: "fit-content" }}
+              >
                 <Image
                   width={"100%"}
-                  height={210}
+                  height={"100%"}
                   src={`data:image/png;base64,   ${photo.image_base64}`}
                 />
               </Col>
             ) : (
-              <Col span={6} key={index}>
+              <Col
+                xl={{ span: 6, offset: 0 }}
+                span={22}
+                offset={1}
+                key={index}
+                className={styles["secondary-image"]}
+              >
                 <Image
                   width={"100%"}
-                  height={55}
+                  height={"100%"}
                   src={`data:image/png;base64,   ${photo.image_base64}`}
                 />
               </Col>
