@@ -1,0 +1,28 @@
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: lightgrey;
+  .contacts-container {
+    .contact-header-container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    .icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border: 1px black solid;
+      border-radius: 50%;
+    }
+  }
+}

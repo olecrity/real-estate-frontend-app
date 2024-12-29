@@ -1,12 +1,10 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Advertisments from "./pages/Advertisments";
-import Work from "./pages/Work";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import { useAuth } from "./contexts/AuthContext";
 import { memo, useEffect } from "react";
 import CreateAppartment from "./pages/CreateAppartment";
-import FakePage from "./pages/FakePage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppLayout from "./ui/AppLayout/AppLayout";
@@ -47,7 +45,6 @@ const App = memo(function App() {
             <Route index element={<Navigate to="/appartments" replace />} />
             <Route path="appartments" element={<Advertisments />} />
             <Route path="bookmarks" element={<BookmarksPage />} />
-            <Route path="work" element={<Work />} />
             <Route path="about-us" element={<AboutUs />} />
             <Route path="login" element={<Login />} />
             <Route path="appartment/:appartmentId" element={<Appartment />} />
