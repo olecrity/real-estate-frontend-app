@@ -1,3 +1,4 @@
+import { Footer } from "antd/es/layout/layout";
 import photo from "../data/img/proekt-doma-q6.jpg";
 import StagesWithUs from "../ui/StagesWithUs/StagesWithUs";
 

@@ -5,6 +5,10 @@
   align-items: center;
   padding: 10px;
   background-color: lightgrey;
+  position: absolute;
+  height: 80px;
+  bottom: 0;
+  width: 1000px;
   .contacts-container {
     .contact-header-container {
       display: flex;

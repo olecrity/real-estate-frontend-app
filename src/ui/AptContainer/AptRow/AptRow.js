@@ -31,7 +31,7 @@ function AptRow({ object }) {
         <div className={styles["apt-text-info-container"]}>
           <div className={styles["text-info-left"]}>
             <p className={styles["date"]}>{object.created_date}</p>
-            <p>{object.location}</p>
+            <p>{object.title}</p>
             <p>{`${object.rooms} кім.`}</p>
             <p>Площа: {object.square}</p>
             <p>Поверх: {object.floor}</p>

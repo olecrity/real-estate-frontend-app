@@ -39,7 +39,6 @@ const App = memo(function App() {
   return (
     <div className="page-wrapper">
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate to="/appartments" replace />} />
