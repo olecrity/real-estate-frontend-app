@@ -9,12 +9,12 @@ function useCreateAppartment() {
   const { mutate: createAppartment, isLoading: isCreating } = useMutation({
     mutationFn: createAppartmentApi,
     onSuccess: () => {
-      successMessage("Appartment added succesfully");
+      successMessage("Квартира успішно додана");
       queryClient.invalidateQueries({ queryKey: ["appartments"] });
     },
     onError: (err) => {
       console.error(err);
-      errorMessage("Failed to add new appartment!");
+      errorMessage("Помилка при додаванні квартири");
     },
   });
   return { isCreating, createAppartment };

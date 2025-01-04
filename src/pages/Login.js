@@ -6,7 +6,6 @@ function Login() {
 
   const onFinish = async (values) => {
     const { email, password } = values;
-    console.log(login);
     try {
       await login(email, password);
     } catch (err) {

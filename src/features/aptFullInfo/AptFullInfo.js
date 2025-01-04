@@ -8,7 +8,6 @@ import AptMain from "./AptMain/AptMain";
 function AptFullInfo() {
   const params = useParams();
   const { isLoading, appartmentInfo } = useAptFullInfo(params.appartmentId);
-  console.log(isLoading, appartmentInfo);
 
   if (isLoading) {
     return <Spin spinning={true} percent={0} fullscreen />;

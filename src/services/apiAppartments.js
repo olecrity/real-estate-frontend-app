@@ -80,5 +80,4 @@ export async function changeStatus(id) {
     },
   });
   const data = await res.json();
-  console.log(data);
 }

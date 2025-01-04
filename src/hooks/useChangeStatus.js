@@ -11,11 +11,11 @@ function useChangeStatus() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["appartments"] });
       queryClient.invalidateQueries({ queryKey: ["bookmarks"] });
-      successMessage("Status changed successfully");
+      successMessage("Статус успішно змінено");
     },
     onError: (err) => {
       console.error(err);
-      errorMessage("Failed to change status");
+      errorMessage("Помилка при зміні статусу");
     },
   });
   return { isChanging, changeStatus };
