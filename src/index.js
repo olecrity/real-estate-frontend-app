@@ -5,16 +5,19 @@ import App from "./App";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BrowserRouter } from "react-router-dom";
 import { BookmarksProvider } from "./contexts/BookmarksContext";
+import { MessageProvider } from "./contexts/MessageContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <BookmarksProvider>
-          <App />
-        </BookmarksProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <MessageProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <BookmarksProvider>
+            <App />
+          </BookmarksProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </MessageProvider>
   </React.StrictMode>
 );

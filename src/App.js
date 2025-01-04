@@ -5,12 +5,17 @@ import Login from "./pages/Login";
 import { useAuth } from "./contexts/AuthContext";
 import { memo, useEffect } from "react";
 import CreateAppartment from "./pages/CreateAppartment";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppLayout from "./ui/AppLayout/AppLayout";
 import Appartment from "./pages/Appartment";
 import BookmarksPage from "./pages/BookmarksPage";
 import { useBookmarks } from "./contexts/BookmarksContext";
+import { useMessage } from "./contexts/MessageContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,6 +24,7 @@ const queryClient = new QueryClient({
     },
   },
 });
+
 const App = memo(function App() {
   const { isAuth, tokenLogin } = useAuth();
   const { setBookmarks } = useBookmarks();

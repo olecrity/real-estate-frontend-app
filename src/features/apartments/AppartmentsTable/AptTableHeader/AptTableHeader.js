@@ -5,7 +5,7 @@ import { useFilters } from "../../../../contexts/FiltersContext";
 import { useState } from "react";
 function AptTableHeader() {
   const { filters } = useFilters();
-  const { appartments } = useAppartments(filters);
+  const { appartments, error } = useAppartments(filters);
   const { dispatch } = useFilters();
 
   function handleSortingChange(value) {

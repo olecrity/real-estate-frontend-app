@@ -5,9 +5,10 @@ import { useFilters } from "../../../../contexts/FiltersContext";
 import { useAppartments } from "../../../../hooks/useAppartments";
 import AptContainer from "../../../../ui/AptContainer/AptContainer.js";
 import styles from "./AptTableList.module.scss";
+import ErrorContainer from "../../../../ui/ErrorContainer/ErrorContainer.js";
 function AptTableList() {
   const { filters, dispatch } = useFilters();
-  const { isLoading, appartments } = useAppartments(filters);
+  const { isLoading, appartments, error } = useAppartments(filters);
 
   const { page, limit } = filters;
 
@@ -25,17 +26,26 @@ function AptTableList() {
   }
   return (
     <div className={styles["apt-list-container"]}>
-      <AptContainer appartments={appartments} />
-      <Pagination
-        defaultCurrent={1}
-        current={page}
-        total={appartments.total_objects}
-        pageSize={limit}
-        hideOnSinglePage={true}
-        responsive={true}
-        onChange={handlePageChange}
-        pageSizeOptions={[5, 10, 20]}
-      />
+      {!error ? (
+        <>
+          <AptContainer appartments={appartments} />
+          <Pagination
+            defaultCurrent={1}
+            current={page}
+            total={appartments.total_objects}
+            pageSize={limit}
+            hideOnSinglePage={true}
+            responsive={true}
+            onChange={handlePageChange}
+            pageSizeOptions={[5, 10, 20]}
+          />
+        </>
+      ) : (
+        <ErrorContainer>
+          Не вдалось отримати список оголошень, будь ласка, перевірте з'єднання
+          з сервером!
+        </ErrorContainer>
+      )}
     </div>
   );
 }
