@@ -19,8 +19,8 @@ function Bookmarks() {
   return (
     <div>
       <div className={styles["bookmarks-header"]}>
-        <h3>Ваші закладки ({bookmarksApts?.objects?.length})</h3>
-        {bookmarksApts && bookmarksApts?.length > 0 && (
+        <h3>Ваші закладки ({bookmarksApts.objects.length})</h3>
+        {bookmarksApts && bookmarksApts?.objects.length > 0 && (
           <Button
             onClick={resetBookmarks}
             variant="solid"

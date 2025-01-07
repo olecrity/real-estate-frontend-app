@@ -7,9 +7,9 @@ function AppLayout() {
   return (
     <div className={styles["layout"]}>
       <Header />
-      <div className={styles["main"]}>
+      <main className={styles["main"]}>
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </div>
   );

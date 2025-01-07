@@ -57,12 +57,6 @@ function AptRow({ object }) {
           </Button>
         )}
       </div>
-      {/* <div className={styles["bookmark"]}>
-        <span className={styles["star-icon"]}>
-          <StarOutlined />
-        </span>
-        <span className={styles["bookmark-text"]}>Додати в закладки</span>
-      </div> */}
     </li>
   );
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useFilters } from "../../../contexts/FiltersContext";
 
 function AppartmentsFilter() {
-  const { filters, dispatch } = useFilters();
+  const { dispatch } = useFilters();
   const [isHouse, setIsHouse] = useState(false);
 
   function handleFinish(values) {

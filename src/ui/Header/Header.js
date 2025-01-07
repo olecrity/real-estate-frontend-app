@@ -31,7 +31,7 @@ function Header() {
     },
   ];
   return (
-    <div className={`${styles.header} shadow-bottom`}>
+    <header className={`${styles.header} shadow-bottom`}>
       <div className={styles["logo"]}>
         <img src={logo} alt="Lion prime"></img>
 
@@ -74,7 +74,7 @@ function Header() {
           </Button>
         )}
       </div>
-    </div>
+    </header>
   );
 }
 

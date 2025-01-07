@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useState } from "react";
 
 const FiltersContext = createContext();
 
@@ -32,6 +32,7 @@ function reducer(state, action) {
         price_max: action.payload.price_max,
         category: action.payload.category,
         type: action.payload.type,
+        page: 1,
       };
     case "filters/reset":
       return {
@@ -46,6 +47,7 @@ function reducer(state, action) {
         price_max: null,
         category: null,
         type: null,
+        page: 1,
       };
     case "pagination/set":
       return {
@@ -65,18 +67,20 @@ function reducer(state, action) {
         rooms_min: action.payload.rooms_min,
         rooms_max: action.payload.rooms_max,
         type: "квартира",
+        page: 1,
       };
     case "category/set":
       return {
         ...state,
         category: action.payload,
+        page: 1,
       };
     case "type/set":
       return {
         ...state,
         type: action.payload,
+        page: 1,
       };
-
     default:
       throw new Error("Unknown action");
   }

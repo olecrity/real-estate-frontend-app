@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchAppartments } from "../services/apiAppartments";
-import { useMessage } from "../contexts/MessageContext";
 
 export function useAppartments(filters) {
   const {

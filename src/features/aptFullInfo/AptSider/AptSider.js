@@ -3,7 +3,7 @@ import { useAptFullInfo } from "../useAptFullInfo";
 import { PhoneOutlined } from "@ant-design/icons";
 
 import styles from "./AptSider.module.scss";
-import { Col, Flex, Image, Row } from "antd";
+import { Col, Image, Row } from "antd";
 
 function AptSider() {
   const params = useParams();

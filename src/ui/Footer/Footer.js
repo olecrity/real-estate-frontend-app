@@ -4,7 +4,7 @@ import { PhoneOutlined } from "@ant-design/icons";
 
 function Footer() {
   return (
-    <div className={styles["footer-container"]}>
+    <footer className={styles["footer-container"]}>
       <p>Lion Prime, 2024</p>
       <p>Location of the office</p>
       <div className={styles["contacts-container"]}>
@@ -19,7 +19,7 @@ function Footer() {
           <div>+38 099 1234567</div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

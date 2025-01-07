@@ -94,7 +94,6 @@ function AuthProvider({ children }) {
         setTimeout(() => {
           logout();
         }, (decoded.exp - nowDate) * 1000);
-        navigate("/appartment/create");
       } catch (err) {
         console.error(err.message);
       }
